@@ -46,7 +46,6 @@ function displayTemperature(response) {
 }
 
 function search(city) {
-  let city = "Paris";
   let apiKey = "b01b330012699bdf6ed530375ada87c3";
   let url =
     "http://api.openweathermap.org/data/2.5/weather?p=${city}&appid=${apiKey}&units=metric";
@@ -79,7 +78,7 @@ function displayCelsiusTemperature(event) {
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
 
-  temperatureElement.innerHTML = celsiusTemperature;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusTemperature = null;
